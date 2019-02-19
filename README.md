@@ -1,1 +1,1 @@
-"# Elastiscout" 
+# Elastiscout
