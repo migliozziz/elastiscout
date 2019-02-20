@@ -12,19 +12,19 @@ class ElasticsearchEngine extends Engine
     /**
      * The Elasticsearch client.
      *
-     * @var \Elasticsearch\ElasticsearchSearch\SearchClient
+     * @var \Elasticsearch\Client
      */
     protected $client;
 
     /**
      * Create a new engine instance.
      *
-     * @param  \Elasticsearch\ElasticsearchSearch\SearchClient  $elasticsearch
+     * @param  \Elasticsearch\Client  $elasticsearch
      * @return void
      */
-    public function __construct(/*Elasticsearch $config*/)
+    public function __construct(Elasticsearch $client)
     {
-        $this->client = ClientBuilder::create()->setHosts([config('app.es')])->build();
+        $this->client = $client; 
     }
 
     /**
